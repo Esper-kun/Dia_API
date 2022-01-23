@@ -37,7 +37,7 @@ class DetalhesDiaView(APIView):
     def put(self, request, id_dia, format=None):
         try:
             instance = Dia.objects.get(id_dia=id_dia)
-            serializer = DiaSerializer(instance, data=request.data)
+            serializer = DiaSerializer(instance, data=request.data, partial=True)
             if serializer.is_valid():
                 serializer.save()
                 return Response(serializer.data)
