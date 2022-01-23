@@ -1,0 +1,1 @@
+web: gunicorn dias_api.wsgi --log-file -
