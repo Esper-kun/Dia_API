@@ -32,7 +32,7 @@ class DetalhesDiaView(APIView):
         except Dia.DoesNotExist:
             pass
         
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        return Response()
 
     def put(self, request, id_dia, format=None):
         try:
@@ -44,7 +44,7 @@ class DetalhesDiaView(APIView):
         except Dia.DoesNotExist:
             pass
         
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        return Response()
 
     def delete(self, request, id_dia, format=None):
         try:
